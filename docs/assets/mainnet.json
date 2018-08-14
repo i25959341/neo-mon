@@ -11,6 +11,14 @@
       "type": "REST"
     },
     {
+      "service": "neoNotification",
+      "url": "http://notifications1.neeeo.org/v1/notifications/block/1",
+      "location": "United States",
+      "address": "104.25.126.31",
+      "locale": "us",
+      "type": "REST"
+    },
+    {
       "protocol": "https",
       "url": "seed1.switcheo.network",
       "location": "Singapore",

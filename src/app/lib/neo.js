@@ -725,6 +725,26 @@ function getCurrentBlockHeight$1 () {
     return this.$get('get_height');
 }
 
+function neoNotification(options) {
+  var inst = new RestService();
+
+  serviceOptions(inst, 'neoNotification', options);
+
+  inst.getCurrentBlockHeight = getCurrentBlockHeight$4;
+
+  return inst;
+}
+
+function getCurrentBlockHeight$4 () {
+  return this.$get('', null, { transformResponse: transformResponse });
+
+  function transformResponse (response) {
+      return {
+          height: response.data.current_height
+      };
+  }
+}
+
 function neon(options) {
     var inst = new RestService();
 
@@ -2336,6 +2356,7 @@ exports.node = node;
 exports.rest = rest;
 exports.registry = registry;
 exports.service = service;
+exports.neoNotification=neoNotification;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
